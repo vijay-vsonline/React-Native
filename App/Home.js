@@ -18,10 +18,10 @@ export default class HomeScreen extends React.Component {
   };
 
   render() {
-    const userList = this.state.GitHubUserList.map((data) => {
+    const userList = this.state.GitHubUserList.map((data,key) => {
       return (
-        <View >
-          <View style={{ width: 250, height: 50, borderRadius: 15 }} >
+        <View style={{margin:10}} >
+          <View style={{ width: 100, height: 50, borderRadius: 15 }} >
 
             <Button title={data} onPress={() => this.props.navigation.push('Profile',{ Uname : data })}></Button>
           </View>
@@ -35,7 +35,7 @@ export default class HomeScreen extends React.Component {
         <Text>Tap the Username to see more information
         </Text>
         </View>
-        <View style={{flexWrap: 'wrap', justifyContent: 'center',alignItems: 'center',margin:20}}>
+        <View style={{flexDirection: 'row',flexWrap:'wrap'}}>
         {userList}
 
         </View>
